@@ -1,0 +1,24 @@
+{
+  "name": "gulp-callfunction",
+  "version": "0.0.1",
+  "description": "accepts a function call as parameter to execute in gulp pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pushrocks/gulp-callfunction.git"
+  },
+  "keywords": [
+    "json",
+    "jade",
+    "template"
+  ],
+  "author": "Smart Coordination GmbH <office@push.rocks> (https://push.rocks)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushrocks/gulp-callfunction/issues"
+  },
+  "homepage": "https://github.com/pushrocks/gulp-callfunction"
+}
