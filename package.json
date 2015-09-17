@@ -4,7 +4,7 @@
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd ts/compile && gulp"
   },
   "repository": {
     "type": "git",
