@@ -27,5 +27,8 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "beautylog": "0.0.15"
   }
 }

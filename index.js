@@ -1,11 +1,38 @@
 /// <reference path="typings/tsd.d.ts" />
-var path, through;
-through = require("through2");
-path = require("path");
-module.exports = function (jsonObject, type) {
-    if (type === void 0) { type = undefined; }
-    return through.obj(function (file, enc, cb) {
-        //tell gulp that we are complete
-        return cb(null, file);
-    });
+var through = require("through2");
+var path = require("path");
+var beautylog = require("beautylog");
+//important vars
+var executionMode; //can be forEach or atEnd
+var functionsToExecute;
+var runFunctionNames = function () {
+    if (typeof functionsToExecute === "function") {
+        functionsToExecute();
+    }
+    else if (Array.isArray(functionsToExecute)) {
+        for (var anyFunction in functionsToExecute) {
+            anyFunction();
+        }
+    }
+    else {
+        beautylog.error('gulp-callfunction: something is strange with the given arguments');
+    }
+};
+var forEach = function (file, enc, cb) {
+    if (executionMode === 'forEach') {
+        runFunctionNames();
+    }
+    //tell gulp that we are complete
+    return cb(null, file);
+};
+var atEnd = function () {
+    if (executionMode === "atEnd") {
+        runFunctionNames();
+    }
+};
+module.exports = function (functionsToExecute, executionMode) {
+    if (executionMode === void 0) { executionMode = 'forEach'; }
+    this.functionsToExecute = functionsToExecute;
+    this.executionMode = executionMode;
+    return through.obj(forEach, atEnd);
 };
