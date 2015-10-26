@@ -4,6 +4,7 @@ accepts call to execute in gulp pipeline.
 ### build status/Dependencies
 [![Build Status](https://travis-ci.org/pushrocks/gulp-callfunction.svg?branch=v0.0.2)](https://travis-ci.org/pushrocks/gulp-callfunction)
 [![Dependency Status](https://david-dm.org/pushrocks/gulp-callfunction.svg)](https://david-dm.org/pushrocks/gulp-callfunction)
+[![devDependency Status](https://david-dm.org/pushrocks/gulp-callfunction/dev-status.svg)](https://david-dm.org/pushrocks/gulp-callfunction#info=devDependencies)
 
 ### Usage
 ```javascript
