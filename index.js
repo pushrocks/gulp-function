@@ -3,14 +3,17 @@ var through = require("through2");
 var path = require("path");
 var beautylog = require("beautylog");
 //important vars
-var executionMode; //can be forEach or atEnd
-var functionsToExecute;
+var gulpCallFunction = {
+    executionMode: 'forEach',
+    functionsToExecute: undefined,
+    logBool: false
+};
 var runFunctionNames = function () {
-    if (typeof functionsToExecute === "function") {
-        functionsToExecute();
+    if (typeof gulpCallFunction.functionsToExecute == "function") {
+        gulpCallFunction.functionsToExecute();
     }
-    else if (Array.isArray(functionsToExecute)) {
-        for (var anyFunction in functionsToExecute) {
+    else if (Array.isArray(gulpCallFunction.functionsToExecute)) {
+        for (var anyFunction in gulpCallFunction.functionsToExecute) {
             anyFunction();
         }
     }
@@ -19,20 +22,26 @@ var runFunctionNames = function () {
     }
 };
 var forEach = function (file, enc, cb) {
-    if (executionMode === 'forEach') {
+    if (gulpCallFunction.logBool)
+        beautylog.log(gulpCallFunction.executionMode);
+    if (gulpCallFunction.executionMode === 'forEach') {
+        if (gulpCallFunction.logBool)
+            beautylog.log('is forEach');
         runFunctionNames();
     }
     //tell gulp that we are complete
     return cb(null, file);
 };
 var atEnd = function () {
-    if (executionMode === "atEnd") {
+    if (gulpCallFunction.executionMode == "atEnd") {
         runFunctionNames();
     }
 };
-module.exports = function (functionsToExecute, executionMode) {
+module.exports = function (functionsToExecute, executionMode, logBool) {
     if (executionMode === void 0) { executionMode = 'forEach'; }
-    this.functionsToExecute = functionsToExecute;
-    this.executionMode = executionMode;
+    if (logBool === void 0) { logBool = false; }
+    gulpCallFunction.functionsToExecute = functionsToExecute;
+    gulpCallFunction.executionMode = executionMode;
+    gulpCallFunction.logBool = logBool;
     return through.obj(forEach, atEnd);
 };

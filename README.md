@@ -17,7 +17,7 @@ var myFunction = function () {
 gulp.task('gulpTest',function() {
     gulp.src('./mydir/*.something')
         .pipe(gulpCallFunction(myFunction,'forEach'))
-        .pipe(gulp.dest(./build/))
+        .pipe(gulp.dest("./build/"))
 });
 ```
 

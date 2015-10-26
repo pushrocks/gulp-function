@@ -4,7 +4,7 @@
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "(cd ts/compile && gulp)",
+    "test": "(cd ts/compile && node compile.js) && (node test.js)",
     "reinstall": "(rm -r node_modules && npm install)",
     "release": "(git pull origin master && npm version patch && git push origin master && git checkout release && git merge master && git push origin release && git checkout master)",
     "startdev": "(git checkout master && git pull origin master)"
@@ -29,6 +29,7 @@
     "gulp-typescript": "^2.9.2"
   },
   "dependencies": {
-    "beautylog": "0.0.15"
+    "beautylog": "0.0.15",
+    "through2": "^2.0.0"
   }
 }
