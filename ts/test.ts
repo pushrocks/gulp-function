@@ -1,9 +1,10 @@
 /// <reference path="typings/tsd.d.ts" />
 var gulp = require("gulp");
 var gulpCallFunction = require("./index.js");
+var beautylog = require("beautylog")("os");
 
 var myFunction = function () {
-    console.log("Hello World!");
+    beautylog.log("Hello World!");
 }
 
 gulp.task('default',function() {

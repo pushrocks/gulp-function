@@ -29,7 +29,7 @@
     "gulp-typescript": "^2.9.2"
   },
   "dependencies": {
-    "beautylog": "0.0.15",
+    "beautylog": "1.0.4",
     "through2": "^2.0.0"
   }
 }

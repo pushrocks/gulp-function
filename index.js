@@ -1,7 +1,7 @@
 /// <reference path="typings/tsd.d.ts" />
 var through = require("through2");
 var path = require("path");
-var beautylog = require("beautylog");
+var beautylog = require("beautylog")("os");
 //important vars
 var gulpCallFunction = {
     executionMode: 'forEach',
