@@ -32,10 +32,11 @@ var forEach = function (file, enc, cb) {
     //tell gulp that we are complete
     return cb(null, file);
 };
-var atEnd = function () {
+var atEnd = function (cb) {
     if (gulpCallFunction.executionMode == "atEnd") {
         runFunctionNames();
     }
+    cb();
 };
 module.exports = function (functionsToExecute, executionMode, logBool) {
     if (executionMode === void 0) { executionMode = 'forEach'; }

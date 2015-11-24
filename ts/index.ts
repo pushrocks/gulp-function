@@ -33,10 +33,11 @@ var forEach = function (file, enc, cb) {
     return cb(null, file);
 };
 
-var atEnd = function() {
+var atEnd = function(cb) {
     if (gulpCallFunction.executionMode == "atEnd") {
         runFunctionNames();
     }
+    cb();
 };
 module.exports = function (functionsToExecute:any|any[],executionMode:string = 'forEach', logBool = false) {
     gulpCallFunction.functionsToExecute = functionsToExecute;
