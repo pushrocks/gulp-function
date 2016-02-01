@@ -14,9 +14,9 @@
     "url": "https://github.com/pushrocks/gulp-function.git"
   },
   "keywords": [
-    "json",
-    "jade",
-    "template"
+    "gulpplugin",
+    "gulp",
+    "function"
   ],
   "author": "Smart Coordination GmbH <office@push.rocks> (https://push.rocks)",
   "license": "MIT",
