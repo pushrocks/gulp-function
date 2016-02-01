@@ -1,22 +1,22 @@
-/// <reference path="typings/tsd.d.ts" />
+/// <reference path="typings/main.d.ts" />
 var through = require("through2");
 var path = require("path");
-var beautylog = require("beautylog")("os");
+var beautylog = require("beautylog");
 
 
 module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:string = 'forEach', logBoolArg = false) {
     //important vars
-    var gulpCallFunction = {
+    var gulpFunction = {
         executionMode: executionModeArg, //can be forEach or atEnd
         functionsToExecute: functionsToExecuteArg,
         logBool: logBoolArg
     };
 
     var runFunctionNames = function () {
-        if (typeof gulpCallFunction.functionsToExecute == "function" ) {
-            gulpCallFunction.functionsToExecute();
-        } else if (Array.isArray(gulpCallFunction.functionsToExecute)) {
-            for (var anyFunction in gulpCallFunction.functionsToExecute) {
+        if (typeof gulpFunction.functionsToExecute == "function" ) {
+            gulpFunction.functionsToExecute();
+        } else if (Array.isArray(gulpFunction.functionsToExecute)) {
+            for (var anyFunction in gulpFunction.functionsToExecute) {
                 anyFunction();
             }
         } else {
@@ -26,9 +26,9 @@ module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:stri
 
 
     var forEach = function (file, enc, cb) {
-        if (gulpCallFunction.logBool) beautylog.log(gulpCallFunction.executionMode);
-        if (gulpCallFunction.executionMode === 'forEach') {
-            if(gulpCallFunction.logBool) beautylog.log('is forEach');
+        if (gulpFunction.logBool) beautylog.log(gulpFunction.executionMode);
+        if (gulpFunction.executionMode === 'forEach') {
+            if(gulpFunction.logBool) beautylog.log('is forEach');
             runFunctionNames();
         }
         //tell gulp that we are complete
@@ -36,7 +36,7 @@ module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:stri
     };
 
     var atEnd = function(cb) {
-        if (gulpCallFunction.executionMode == "atEnd") {
+        if (gulpFunction.executionMode == "atEnd") {
             runFunctionNames();
         }
         cb();

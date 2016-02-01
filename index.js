@@ -1,25 +1,24 @@
-/// <reference path="typings/tsd.d.ts" />
+#!/usr/bin/env node
+
+/// <reference path="typings/main.d.ts" />
 var through = require("through2");
 var path = require("path");
-var beautylog = require("beautylog")("os");
-module.exports = function (functionsToExecute, executionMode, logBool) {
-    if (executionMode === void 0) { executionMode = 'forEach'; }
-    if (logBool === void 0) { logBool = false; }
+var beautylog = require("beautylog");
+module.exports = function (functionsToExecuteArg, executionModeArg, logBoolArg) {
+    if (executionModeArg === void 0) { executionModeArg = 'forEach'; }
+    if (logBoolArg === void 0) { logBoolArg = false; }
     //important vars
-    var gulpCallFunction = {
-        executionMode: 'forEach',
-        functionsToExecute: undefined,
-        logBool: false
+    var gulpFunction = {
+        executionMode: executionModeArg,
+        functionsToExecute: functionsToExecuteArg,
+        logBool: logBoolArg
     };
-    gulpCallFunction.functionsToExecute = functionsToExecute;
-    gulpCallFunction.executionMode = executionMode;
-    gulpCallFunction.logBool = logBool;
     var runFunctionNames = function () {
-        if (typeof gulpCallFunction.functionsToExecute == "function") {
-            gulpCallFunction.functionsToExecute();
+        if (typeof gulpFunction.functionsToExecute == "function") {
+            gulpFunction.functionsToExecute();
         }
-        else if (Array.isArray(gulpCallFunction.functionsToExecute)) {
-            for (var anyFunction in gulpCallFunction.functionsToExecute) {
+        else if (Array.isArray(gulpFunction.functionsToExecute)) {
+            for (var anyFunction in gulpFunction.functionsToExecute) {
                 anyFunction();
             }
         }
@@ -28,10 +27,10 @@ module.exports = function (functionsToExecute, executionMode, logBool) {
         }
     };
     var forEach = function (file, enc, cb) {
-        if (gulpCallFunction.logBool)
-            beautylog.log(gulpCallFunction.executionMode);
-        if (gulpCallFunction.executionMode === 'forEach') {
-            if (gulpCallFunction.logBool)
+        if (gulpFunction.logBool)
+            beautylog.log(gulpFunction.executionMode);
+        if (gulpFunction.executionMode === 'forEach') {
+            if (gulpFunction.logBool)
                 beautylog.log('is forEach');
             runFunctionNames();
         }
@@ -39,7 +38,7 @@ module.exports = function (functionsToExecute, executionMode, logBool) {
         return cb(null, file);
     };
     var atEnd = function (cb) {
-        if (gulpCallFunction.executionMode == "atEnd") {
+        if (gulpFunction.executionMode == "atEnd") {
             runFunctionNames();
         }
         cb();

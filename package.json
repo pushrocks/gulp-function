@@ -1,17 +1,17 @@
 {
-  "name": "gulp-callfunction",
+  "name": "gulp-function",
   "version": "0.0.10",
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "(cd ts/compile && node compile.js) && (node test.js)",
+    "test": "(npmts)",
     "reinstall": "(rm -r node_modules && npm install)",
     "release": "(git pull origin master && npm version patch && git push origin master && git checkout release && git merge master && git push origin release && git checkout master)",
     "startdev": "(git checkout master && git pull origin master)"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pushrocks/gulp-callfunction.git"
+    "url": "https://github.com/pushrocks/gulp-function.git"
   },
   "keywords": [
     "json",
@@ -21,15 +21,14 @@
   "author": "Smart Coordination GmbH <office@push.rocks> (https://push.rocks)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pushrocks/gulp-callfunction/issues"
+    "url": "https://github.com/pushrocks/gulp-function/issues"
   },
-  "homepage": "https://github.com/pushrocks/gulp-callfunction",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-typescript": "^2.9.2"
-  },
+  "homepage": "https://github.com/pushrocks/gulp-function",
   "dependencies": {
-    "beautylog": "1.0.4",
-    "through2": "^2.0.0"
+    "beautylog": "2.0.4",
+    "through2": "2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }

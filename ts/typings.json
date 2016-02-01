@@ -1,0 +1,7 @@
+{
+  "ambientDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts",
+    "mocha": "github:Bartvds/tsd-deftools/typings/DefinitelyTyped/mocha/mocha.d.ts",
+    "colors": "github:DefinitelyTyped/DefinitelyTyped/colors/colors.d.ts"
+  }
+}
