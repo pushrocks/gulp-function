@@ -1,6 +1,7 @@
 node_modules/
 .settings/
 .idea/
+coverage/
 
 ts/*.js
 ts/*.js.map

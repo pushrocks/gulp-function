@@ -4,22 +4,20 @@
 var through = require("through2");
 var path = require("path");
 var beautylog = require("beautylog");
-module.exports = function (functionsToExecuteArg, executionModeArg, logBoolArg) {
+module.exports = function (functionsToExecuteArg, executionModeArg) {
     if (executionModeArg === void 0) { executionModeArg = 'forEach'; }
-    if (logBoolArg === void 0) { logBoolArg = false; }
     //important vars
     var gulpFunction = {
         executionMode: executionModeArg,
-        functionsToExecute: functionsToExecuteArg,
-        logBool: logBoolArg
+        functionsToExecute: functionsToExecuteArg
     };
     var runFunctionNames = function () {
-        if (typeof gulpFunction.functionsToExecute == "function") {
+        if (typeof gulpFunction.functionsToExecute === "function") {
             gulpFunction.functionsToExecute();
         }
         else if (Array.isArray(gulpFunction.functionsToExecute)) {
             for (var anyFunction in gulpFunction.functionsToExecute) {
-                anyFunction();
+                gulpFunction.functionsToExecute[anyFunction]();
             }
         }
         else {
@@ -27,18 +25,14 @@ module.exports = function (functionsToExecuteArg, executionModeArg, logBoolArg) 
         }
     };
     var forEach = function (file, enc, cb) {
-        if (gulpFunction.logBool)
-            beautylog.log(gulpFunction.executionMode);
         if (gulpFunction.executionMode === 'forEach') {
-            if (gulpFunction.logBool)
-                beautylog.log('is forEach');
             runFunctionNames();
         }
         //tell gulp that we are complete
         return cb(null, file);
     };
     var atEnd = function (cb) {
-        if (gulpFunction.executionMode == "atEnd") {
+        if (gulpFunction.executionMode === "atEnd") {
             runFunctionNames();
         }
         cb();
