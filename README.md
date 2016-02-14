@@ -27,9 +27,10 @@ var myFunction = function () {
 }
 
 gulp.task('gulpTest',function() {
-    gulp.src('./mydir/*.something')
+    var stream = gulp.src('./mydir/*.something')
         .pipe(gulpFunction(myFunction,'forEach')) //read the notes below
-        .pipe(gulp.dest("./build/"))
+        .pipe(gulp.dest("./build/"));
+    return stream; // by returning the stream gulp knows when our task has finished.
 });
 ```
 
