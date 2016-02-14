@@ -8,6 +8,10 @@ accepts call to execute in gulp pipeline.
 [![bitHound Code](https://www.bithound.io/github/pushrocks/gulp-function/badges/code.svg)](https://www.bithound.io/github/pushrocks/gulp-function)
 [![Coverage Status](https://coveralls.io/repos/github/pushrocks/gulp-function/badge.svg?branch=master)](https://coveralls.io/github/pushrocks/gulp-function?branch=master)
 
+### Versions
+[![GitHub version](https://badge.fury.io/gh/pushrocks%2Fgulp-function.svg)](https://badge.fury.io/gh/pushrocks%2Fgulp-function)
+[![npm version](https://badge.fury.io/js/gulp-function.svg)](https://badge.fury.io/js/gulp-function)
+
 ### Usage
 ```javascript
 var gulp = require("gulp");
