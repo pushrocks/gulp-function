@@ -1,6 +1,6 @@
 {
   "name": "gulp-function",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "index.js",
   "scripts": {
