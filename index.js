@@ -1,41 +1,57 @@
 #!/usr/bin/env node
 
 /// <reference path="typings/main.d.ts" />
-var through = require("through2");
-var path = require("path");
-var beautylog = require("beautylog");
+var plugins = {
+    beautylog: require("beautylog"),
+    Q: require("q"),
+    through: require("through2")
+};
 module.exports = function (functionsToExecuteArg, executionModeArg) {
     if (executionModeArg === void 0) { executionModeArg = 'forEach'; }
     //important vars
-    var gulpFunction = {
-        executionMode: executionModeArg,
-        functionsToExecute: functionsToExecuteArg
-    };
-    var runFunctionNames = function () {
-        if (typeof gulpFunction.functionsToExecute === "function") {
-            gulpFunction.functionsToExecute();
+    var executionMode = executionModeArg; //can be forEach or atEnd
+    var functionsToExecute = functionsToExecuteArg;
+    var promiseArray = [];
+    var runFunction = function (functionArg) {
+        var returnValue = functionArg();
+        if (typeof returnValue !== "undefined" && typeof returnValue.then !== "undefined") {
+            promiseArray.push(returnValue);
         }
-        else if (Array.isArray(gulpFunction.functionsToExecute)) {
-            for (var anyFunction in gulpFunction.functionsToExecute) {
-                gulpFunction.functionsToExecute[anyFunction]();
+    };
+    var checkAndRunFunction = function () {
+        if (typeof functionsToExecute === "function") {
+            runFunction(functionsToExecute);
+        }
+        else if (Array.isArray(functionsToExecute)) {
+            for (var anyFunction in functionsToExecute) {
+                runFunction(functionsToExecute[anyFunction]);
             }
         }
         else {
-            beautylog.error('gulp-callfunction: something is strange with the given arguments');
+            plugins.beautylog.error('gulp-callfunction: something is strange with the given arguments');
         }
+        return plugins.Q.all(promiseArray);
     };
     var forEach = function (file, enc, cb) {
-        if (gulpFunction.executionMode === 'forEach') {
-            runFunctionNames();
+        if (executionMode === 'forEach') {
+            checkAndRunFunction().then(function () {
+                cb(null, file);
+            });
+        }
+        else {
+            cb(null, file);
         }
         //tell gulp that we are complete
-        return cb(null, file);
     };
     var atEnd = function (cb) {
-        if (gulpFunction.executionMode === "atEnd") {
-            runFunctionNames();
+        if (executionMode === "atEnd") {
+            checkAndRunFunction().then(function () {
+                cb();
+            });
         }
-        cb();
+        else {
+            cb();
+        }
     };
-    return through.obj(forEach, atEnd);
+    return plugins.through.obj(forEach, atEnd);
 };

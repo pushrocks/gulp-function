@@ -25,8 +25,9 @@
   },
   "homepage": "https://github.com/pushrocks/gulp-function",
   "dependencies": {
-    "beautylog": "2.1.1",
-    "through2": "2.0.1"
+    "beautylog": "^2.1.1",
+    "q": "^1.4.1",
+    "through2": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
