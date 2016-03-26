@@ -11,21 +11,21 @@ var plugins = {
 
 module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:string = 'forEach') {
     //important vars
-    var executionMode = executionModeArg; //can be forEach or atEnd
-    var functionsToExecute = functionsToExecuteArg;
-    var promiseArray = [];
-    var runFunction = function(functionArg){
-        var returnValue = functionArg();
+    let executionMode = executionModeArg; //can be forEach or atEnd
+    let functionsToExecute = functionsToExecuteArg;
+    let promiseArray = [];
+    let runFunction = function(functionArg){
+        let returnValue = functionArg();
         if (typeof returnValue !== "undefined" && typeof returnValue.then !== "undefined") {
             promiseArray.push(returnValue);
         }
     };
 
-    var checkAndRunFunction = function () {
+    let checkAndRunFunction = function () {
         if (typeof functionsToExecute === "function" ) {
             runFunction(functionsToExecute);
         } else if (Array.isArray(functionsToExecute)) {
-            for (var anyFunction in functionsToExecute) {
+            for (let anyFunction in functionsToExecute) {
                 runFunction(functionsToExecute[anyFunction]);
             }
         } else {
@@ -34,20 +34,29 @@ module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:stri
         return plugins.Q.all(promiseArray);
     };
 
-
-    var forEach = function (file, enc, cb) {
-        if (executionMode === 'forEach') {
-            checkAndRunFunction().then(function(){
+    let hasExecutedOnce = false;
+    let forEach = function (file, enc, cb) { //the forEach function is called for every chunk
+        switch (executionMode){
+            case "forEach":
+                checkAndRunFunction().then(function(){
+                    cb(null, file);
+                });
+                break;
+            case "forFirst":
+                !hasExecutedOnce ? checkAndRunFunction().then(function(){
+                    cb(null, file);
+                }) : cb(null, file);
+                hasExecutedOnce = true;
+                break;
+            case "atEnd":
                 cb(null, file);
-            });
-        } else {
-            cb(null, file);
+                break;
+            default:
+                break;
         }
-        //tell gulp that we are complete
-
     };
 
-    var atEnd = function(cb) {
+    let atEnd = function(cb) {
         if (executionMode === "atEnd") {
             checkAndRunFunction().then(function(){
                 cb();

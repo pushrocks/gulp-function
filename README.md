@@ -40,4 +40,4 @@ gulp.task('gulpTest',function() {
 
 > Note: The first argument of gulpFunction can also be an array of multiple functionnames.
 Each function can return a promise. the pipe stop will finish when every promise is fullfilled.  
-> Note: the second argument can be empty (defaults to 'forEach') or 'atEnd'
+> Note: the second argument can be empty, "forEach" (default), "forFirst" or "atEnd";

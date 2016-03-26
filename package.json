@@ -2,7 +2,7 @@
   "name": "gulp-function",
   "version": "1.1.1",
   "description": "accepts a function call as parameter to execute in gulp pipeline",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "(npmts)",
     "reinstall": "(rm -r node_modules && npm install)",
@@ -18,19 +18,19 @@
     "gulp",
     "function"
   ],
-  "author": "Smart Coordination GmbH <office@push.rocks> (https://push.rocks)",
+  "author": "Lossless GmbH <office@lossless.com> (https://lossless.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pushrocks/gulp-function/issues"
   },
   "homepage": "https://github.com/pushrocks/gulp-function",
   "dependencies": {
-    "beautylog": "^2.1.1",
+    "beautylog": "^3.1.2",
     "q": "^1.4.1",
     "through2": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "npmts": "^2.2.3"
+    "npmts": "^3.6.4"
   }
 }
