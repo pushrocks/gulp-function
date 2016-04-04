@@ -1,3 +1,5 @@
 ts/
 test/
+docs/
+coverage/
 node_modules/

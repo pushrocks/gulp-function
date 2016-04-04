@@ -25,12 +25,12 @@
   },
   "homepage": "https://github.com/pushrocks/gulp-function",
   "dependencies": {
-    "beautylog": "^4.1.0",
+    "beautylog": "^4.1.1",
     "q": "^1.4.1",
     "through2": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "npmts": "^5.0.0"
+    "npmts": "^5.0.3"
   }
 }
