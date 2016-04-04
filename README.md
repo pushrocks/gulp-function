@@ -46,6 +46,6 @@ Each function can return a promise. the pipe stop will finish when every promise
 * the following options are available:
     * "forFirst" - executes when first chunk/vinylfile of the stream reaches the pipestop.
        file is pushed further down the line when function's returned promise is fullfilled.
-    *  "atEnd" - executes like "forFirst" but with every chunk/vinylfile in the stream;
-    *  "atLast" - executes after all chunks have passed and are processed in full.
-       That means the stream's "finish" event fires before "atLast" is executed!!!
+    *  "forEach" - executes like "forFirst" but with every chunk/vinylfile in the stream;
+    *  "atEnd" - executes after all chunks have passed and are processed in full.
+       That means the stream's "finish" event fires **before "atLast" is executed**!!!
