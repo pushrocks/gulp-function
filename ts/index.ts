@@ -1,10 +1,6 @@
 /// <reference path="typings/main.d.ts" />
 
-var plugins = {
-    beautylog: require("beautylog"),
-    Q: require("q"),
-    through: require("through2")
-}
+import plugins = require("./gulpfunction.plugins");
 
 
 
@@ -29,7 +25,7 @@ module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:stri
                 runFunction(functionsToExecute[anyFunction]);
             }
         } else {
-            plugins.beautylog.error('gulp-callfunction: something is strange with the given arguments');
+            throw new Error("gulp-callfunction: something is strange with the given arguments");
         }
         return plugins.Q.all(promiseArray);
     };
@@ -65,5 +61,5 @@ module.exports = function (functionsToExecuteArg:any|any[],executionModeArg:stri
             cb();
         }
     };
-    return plugins.through.obj(forEach,atEnd);
+    return plugins.through2.obj(forEach,atEnd);
 };

@@ -1,0 +1,6 @@
+/// <reference path="typings/main.d.ts" />
+"use strict";
+exports.Q = require("q");
+exports.through2 = require("through2");
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImd1bHBmdW5jdGlvbi5wbHVnaW5zLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDBDQUEwQzs7QUFFL0IsU0FBQyxHQUFHLE9BQU8sQ0FBQyxHQUFHLENBQUMsQ0FBQztBQUNqQixnQkFBUSxHQUFHLE9BQU8sQ0FBQyxVQUFVLENBQUMsQ0FBQyIsImZpbGUiOiJndWxwZnVuY3Rpb24ucGx1Z2lucy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vLyA8cmVmZXJlbmNlIHBhdGg9XCJ0eXBpbmdzL21haW4uZC50c1wiIC8+XG5cbmV4cG9ydCBsZXQgUSA9IHJlcXVpcmUoXCJxXCIpO1xuZXhwb3J0IGxldCB0aHJvdWdoMiA9IHJlcXVpcmUoXCJ0aHJvdWdoMlwiKTtcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
