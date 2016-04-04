@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "npmts": "^3.6.4"
+    "npmts": "^4.0.2"
   }
 }
