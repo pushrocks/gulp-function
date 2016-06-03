@@ -1,4 +1,4 @@
-/// <reference path="../ts/typings/main.d.ts" />
+import "typings-test"
 var gulp = require("gulp");
 var gulpFunction = require("../dist/index.js");
 var beautylog = require("beautylog");

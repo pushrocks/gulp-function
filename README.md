@@ -41,9 +41,9 @@ gulp.task('gulpTest',function() {
 ### Notes:
 
 * The first argument of gulpFunction can also be an **array of multiple functionnames**.
-Each function can return a promise. the pipe stop will finish when every promise is fullfilled.  
-* the second argument can be empty, it defaults to "forEach"
-* the following options are available:
+Each function can return a promise. The pipe stop will finish when every promise is fullfilled.  
+* The second argument can be empty, it defaults to "forEach"
+* The following options are available:
     * "forFirst" - executes when first chunk/vinylfile of the stream reaches the pipestop.
        file is pushed further down the line when function's returned promise is fullfilled.
     *  "forEach" - executes like "forFirst" but with every chunk/vinylfile in the stream;
