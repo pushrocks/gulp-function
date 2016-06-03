@@ -27,11 +27,13 @@
   "homepage": "https://gitlab.com/pushrocks/gulp-function",
   "dependencies": {
     "q": "^1.4.1",
-    "through2": "^2.0.1"
+    "through2": "^2.0.1",
+    "typings-global": "^1.0.3"
   },
   "devDependencies": {
     "beautylog": "^5.0.8",
     "gulp": "^3.9.1",
-    "npmts": "^5.2.1"
+    "npmts": "^5.2.1",
+    "typings-test": "^1.0.1"
   }
 }
