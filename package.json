@@ -33,7 +33,7 @@
   "devDependencies": {
     "beautylog": "^5.0.8",
     "gulp": "^3.9.1",
-    "npmts": "^5.2.1",
+    "npmts-g": "^5.2.6",
     "typings-test": "^1.0.1"
   }
 }
