@@ -9,7 +9,7 @@ export interface IPromiseFunction {
     (file?, enc?): PromiseLike<any>
 }
 
-module.exports = (
+let mainExportFunction = (
     functionsToExecuteArg: IPromiseFunction | IPromiseFunction[],
     executionModeArg: TExecutionMode = 'forEach'
 ): Transform => {
@@ -73,3 +73,5 @@ module.exports = (
     }
     return through2.obj(forEach, atEnd)
 }
+
+export default mainExportFunction

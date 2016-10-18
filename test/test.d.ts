@@ -1,1 +1,1 @@
-import "typings-test";
+import 'typings-test';

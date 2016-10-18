@@ -19,8 +19,8 @@ accepts call to execute in gulp pipeline.
 
 ### Usage
 ```javascript
-let gulp = require("gulp");
-let gulpFunction = require("gulp-function");
+import * as gulp from 'gulp';
+import gulpFunction from 'gulp-function' // default ES6 export
 let Q = require("q");
 
 let myFunction = function (file, enc) { // file and enc are optional in case you want to modify the file object
