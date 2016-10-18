@@ -26,14 +26,16 @@
   },
   "homepage": "https://gitlab.com/pushrocks/gulp-function",
   "dependencies": {
+    "@types/q": "0.0.32",
+    "@types/through2": "^2.0.31",
     "q": "^1.4.1",
     "through2": "^2.0.1",
-    "typings-global": "^1.0.3"
+    "typings-global": "^1.0.14"
   },
   "devDependencies": {
-    "beautylog": "^5.0.8",
+    "beautylog": "^6.0.0",
     "gulp": "^3.9.1",
-    "npmts-g": "^5.2.6",
-    "typings-test": "^1.0.1"
+    "npmts-g": "^5.2.8",
+    "typings-test": "^1.0.3"
   }
 }
