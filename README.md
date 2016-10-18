@@ -19,12 +19,12 @@ accepts call to execute in gulp pipeline.
 
 ### Usage
 ```javascript
-var gulp = require("gulp");
-var gulpFunction = require("gulp-function");
-var Q = require("q");
+let gulp = require("gulp");
+let gulpFunction = require("gulp-function");
+let Q = require("q");
 
-var myFunction = function (file, enc) { // file and enc are optional in case you want to modify the file object
-    var done = Q.defer();
+let myFunction = function (file, enc) { // file and enc are optional in case you want to modify the file object
+    let done = Q.defer();
     console.log("Hello World!")
     
     // NOTE:
@@ -36,7 +36,7 @@ var myFunction = function (file, enc) { // file and enc are optional in case you
 }
 
 gulp.task('gulpTest',function() {
-    var stream = gulp.src('./mydir/*.something')
+    let stream = gulp.src('./mydir/*.something')
         .pipe(gulpFunction(myFunction,'forEach')) //read the notes below
         .pipe(gulp.dest("./build/"));
     return stream; // by returning the stream gulp knows when our task has finished.
