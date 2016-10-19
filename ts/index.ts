@@ -9,7 +9,7 @@ export interface IPromiseFunction {
     (file?, enc?): PromiseLike<any>
 }
 
-let mainExportFunction = (
+let defaultExport = (
     functionsToExecuteArg: IPromiseFunction | IPromiseFunction[],
     executionModeArg: TExecutionMode = 'forEach'
 ): Transform => {
@@ -74,4 +74,16 @@ let mainExportFunction = (
     return through2.obj(forEach, atEnd)
 }
 
-export default mainExportFunction
+export let forEach = (funcArg: IPromiseFunction) => {
+    defaultExport(funcArg, 'forEach')
+}
+
+export let forFirst = (funcArg: IPromiseFunction) => {
+    defaultExport(funcArg, 'forFirst')
+}
+
+export let atEnd = (funcArg: IPromiseFunction) => {
+    defaultExport(funcArg, 'atEnd')
+}
+
+export default defaultExport

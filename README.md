@@ -21,6 +21,7 @@ accepts call to execute in gulp pipeline.
 ```javascript
 import * as gulp from 'gulp';
 import gulpFunction from 'gulp-function' // default ES6 export
+// import {forFirst, forEach, atEnd} from 'gulp-function'
 let Q = require("q");
 
 let myFunction = function (file, enc) { // file and enc are optional in case you want to modify the file object
@@ -38,6 +39,7 @@ let myFunction = function (file, enc) { // file and enc are optional in case you
 gulp.task('gulpTest',function() {
     let stream = gulp.src('./mydir/*.something')
         .pipe(gulpFunction(myFunction,'forEach')) //read the notes below
+        // .pipe(gulpFunction.forEach(myFunction))
         .pipe(gulp.dest("./build/"));
     return stream; // by returning the stream gulp knows when our task has finished.
 });
