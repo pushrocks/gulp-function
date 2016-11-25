@@ -75,15 +75,15 @@ let defaultExport = (
 }
 
 export let forEach = (funcArg: IPromiseFunction) => {
-    defaultExport(funcArg, 'forEach')
+    return defaultExport(funcArg, 'forEach')
 }
 
 export let forFirst = (funcArg: IPromiseFunction) => {
-    defaultExport(funcArg, 'forFirst')
+    return defaultExport(funcArg, 'forFirst')
 }
 
 export let atEnd = (funcArg: IPromiseFunction) => {
-    defaultExport(funcArg, 'atEnd')
+    return defaultExport(funcArg, 'atEnd')
 }
 
 export default defaultExport
