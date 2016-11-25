@@ -39,7 +39,7 @@ let myFunction = function (file, enc) { // file and enc are optional in case you
 gulp.task('gulpTest',function() {
     let stream = gulp.src('./mydir/*.something')
         .pipe(gulpFunction(myFunction,'forEach')) //read the notes below
-        // .pipe(gulpFunction.forEach(myFunction))
+        // .pipe(forEach(myFunction)) // if imported as >> import { forEach } from 'gulp-function' <<
         .pipe(gulp.dest("./build/"));
     return stream; // by returning the stream gulp knows when our task has finished.
 });
