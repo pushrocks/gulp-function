@@ -11,7 +11,7 @@ let myFunction = function () {
     done.resolve()
     return done.promise
 }
-let myFunction2 = function () {
+let myFunction2 = function (file?) {
     let done = Q.defer()
     beautylog.ok('Function2 executed')
     done.resolve()
@@ -27,6 +27,18 @@ let myFunction3 = function () {
 let beforeFunction = function () {
     let done = Q.defer()
     beautylog.success('beforeFunction executed')
+    done.resolve()
+    return done.promise
+}
+
+let logFileFunction = function (file) {
+    let done = Q.defer()
+    console.log(file.contents)
+    if (typeof file.contents !== 'undefined') {
+
+    } else {
+        throw new Error('file.contents not present')
+    }
     done.resolve()
     return done.promise
 }
@@ -65,7 +77,7 @@ let timeoutFunction = function(){
 describe('gulpFunction',function(){
     it('should run through smoothly with ' + "'forEach'",function(done){
         gulp.src('./test/*.md')
-            .pipe(gulpFunction(myFunction,'forEach'))
+            .pipe(gulpFunction(logFileFunction,'forEach'))
             .pipe(gulp.dest('./test/result/'))
 
         gulp.src('./test/*.md')
@@ -105,7 +117,10 @@ describe('gulpFunction',function(){
                 return done2.promise
             },'forEach'))
             .pipe(gulpFunction(function(){
+                let done = Q.defer()
                 beautylog.log('nextStep')
+                done.resolve()
+                return done.promise
             }))
             .pipe(gulpFunction(afterFunction,'atEnd'))
             .pipe(gulpFunction(timeoutFunction,'atEnd'))
