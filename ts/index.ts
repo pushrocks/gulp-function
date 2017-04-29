@@ -55,7 +55,7 @@ let defaultExport = (
         hasExecutedOnce = true
         break
       case 'atEnd':
-        cb(null, file)
+        cb()
         break
       default:
         break
