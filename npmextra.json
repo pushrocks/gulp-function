@@ -1,5 +1,10 @@
 {
   "npmts": {
     "mode": "default"
+  },
+  "npmci": {
+    "globalNpmTools": [
+      "npmts"
+    ]
   }
 }
