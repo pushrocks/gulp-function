@@ -1,13 +1,5 @@
 node_modules/
-.settings/
-.idea/
 coverage/
-docs/
 public/
 pages/
-
-ts/*.js
-ts/*.js.map
-ts/typings/
-test/result/
 
