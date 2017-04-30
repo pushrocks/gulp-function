@@ -4,7 +4,6 @@ import * as smartgulp from 'smartgulp'
 let gulp = require('gulp')
 import * as gulpFunction from '../dist/index'
 
-import * as beautylog from 'beautylog'
 let smartq = require('smartq')
 
 

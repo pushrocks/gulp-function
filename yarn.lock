@@ -25,7 +25,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/lodash@^4.14.55", "@types/lodash@^4.14.63":
+"@types/lodash@^4.14.63":
   version "4.14.63"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.63.tgz#5ac475f55bfdc62bc88c4239dbc482f2f3bead93"
 
@@ -112,19 +112,6 @@ beautycolor@^1.0.7:
     ansi-256-colors "^1.1.0"
     typings-global "^1.0.14"
 
-beautylog@^6.1.10:
-  version "6.1.10"
-  resolved "https://registry.yarnpkg.com/beautylog/-/beautylog-6.1.10.tgz#9c27e566937684cb689f9372d98cfa5415d50b72"
-  dependencies:
-    "@types/lodash" "^4.14.55"
-    beautycolor "^1.0.7"
-    figlet "^1.2.0"
-    lodash "^4.17.4"
-    ora "^1.1.0"
-    smartenv "^2.0.0"
-    smartq "^1.1.1"
-    typings-global "^1.0.14"
-
 beeper@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
@@ -183,16 +170,6 @@ chalk@^1.0.0, chalk@^1.1.1:
 check-error@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
-
-cli-cursor@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
-  dependencies:
-    restore-cursor "^2.0.0"
-
-cli-spinners@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-1.0.0.tgz#ef987ed3d48391ac3dab9180b406a742180d6e6a"
 
 clone-buffer@^1.0.0:
   version "1.0.0"
@@ -318,10 +295,6 @@ fancy-log@^1.1.0:
   dependencies:
     chalk "^1.1.1"
     time-stamp "^1.0.0"
-
-figlet@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/figlet/-/figlet-1.2.0.tgz#6c46537378fab649146b5a6143dda019b430b410"
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -862,12 +835,6 @@ lodash@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-1.0.2.tgz#8f57560c83b59fc270bd3d561b690043430e2551"
 
-log-symbols@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
-  dependencies:
-    chalk "^1.0.0"
-
 lru-cache@2:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
@@ -900,10 +867,6 @@ micromatch@^2.3.7:
     object.omit "^2.0.0"
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
-
-mimic-fn@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.1.0.tgz#e667783d92e89dbd342818b5230b9d62a672ad18"
 
 minimatch@^2.0.1:
   version "2.0.10"
@@ -980,21 +943,6 @@ once@~1.3.0:
   resolved "https://registry.yarnpkg.com/once/-/once-1.3.3.tgz#b2e261557ce4c314ec8304f3fa82663e4297ca20"
   dependencies:
     wrappy "1"
-
-onetime@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/onetime/-/onetime-2.0.1.tgz#067428230fd67443b2794b22bba528b6867962d4"
-  dependencies:
-    mimic-fn "^1.0.0"
-
-ora@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ora/-/ora-1.2.0.tgz#32fb3183500efe83f5ea89101785f0ee6060fec9"
-  dependencies:
-    chalk "^1.1.1"
-    cli-cursor "^2.1.0"
-    cli-spinners "^1.0.0"
-    log-symbols "^1.0.2"
 
 orchestrator@^0.3.0:
   version "0.3.8"
@@ -1162,13 +1110,6 @@ resolve@^1.1.6, resolve@^1.1.7:
   dependencies:
     path-parse "^1.0.5"
 
-restore-cursor@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-2.0.0.tgz#9f7ee287f82fd326d4fd162923d62129eee0dfaf"
-  dependencies:
-    onetime "^2.0.0"
-    signal-exit "^3.0.2"
-
 semver@^4.1.0:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
@@ -1193,10 +1134,6 @@ sigmund@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
 
-signal-exit@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
-
 smartchai@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/smartchai/-/smartchai-1.0.3.tgz#de6d010bb8b5aef24cb70b31a5f5334e8c41b72f"
@@ -1214,14 +1151,6 @@ smartdelay@^1.0.1:
   dependencies:
     typings-global "^1.0.14"
 
-smartenv@^2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/smartenv/-/smartenv-2.0.6.tgz#b38c679b0c151b9af548f68c3a072c29d1417e8d"
-  dependencies:
-    lodash "^4.17.4"
-    smartq "^1.1.1"
-    typings-global "^1.0.14"
-
 smartevent@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/smartevent/-/smartevent-1.0.1.tgz#13d2bf2cf094ebdf17813fa0d46041f817a302aa"
@@ -1229,9 +1158,9 @@ smartevent@^1.0.1:
     smartq "^1.1.1"
     typings-global "^1.0.16"
 
-smartfile@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/smartfile/-/smartfile-4.2.1.tgz#2ec85f803f771a1ddff377a438ae87aab25f3e6e"
+smartfile@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/smartfile/-/smartfile-4.2.3.tgz#fc31f7040cb2b316a939e0f068bc33cff9240a03"
   dependencies:
     "@types/fs-extra" "2.x.x"
     "@types/vinyl" "^2.0.0"
@@ -1247,13 +1176,13 @@ smartfile@^4.2.1:
     vinyl-file "^3.0.0"
 
 smartgulp@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/smartgulp/-/smartgulp-1.0.1.tgz#801ad5fbf61f393ca6ba01e28f40758bb75f4a30"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/smartgulp/-/smartgulp-1.0.3.tgz#66726930ac838cb963ad6acd78f6564ae845de17"
   dependencies:
     "@types/lodash" "^4.14.63"
     lodash "^4.17.4"
     smartevent "^1.0.1"
-    smartfile "^4.2.1"
+    smartfile "^4.2.3"
     smartq "^1.1.1"
     smartstream "^1.0.8"
     typings-global "^1.0.16"
