@@ -2,10 +2,9 @@ import { expect, tap } from 'tapbundle'
 
 import * as smartgulp from 'smartgulp'
 let gulp = require('gulp')
-import * as gulpFunction from '../dist/index'
+import * as gulpFunction from '../ts/index'
 
 let smartq = require('smartq')
-
 
 tap.test('should run through smoothly with ' + "'forEach'", async (tools) => {
   let done = smartq.defer()
