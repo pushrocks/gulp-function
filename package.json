@@ -24,6 +24,7 @@
   "homepage": "https://gitlab.com/pushrocks/gulp-function",
   "dependencies": {
     "@types/through2": "^2.0.32",
+    "smartq": "^1.1.6",
     "through2": "^2.0.3",
     "typings-global": "^1.0.16"
   },
