@@ -24,7 +24,7 @@ accepts a function call as parameter to execute in gulp pipeline
 ### Usage
 
 ```typescript
-import * as gulp from "gulp";
+import gulp = require('gulp');
 import gulpFunction from "gulp-function"; // default ES6 export
 // import {forFirst, forEach, atEnd} from 'gulp-function'
 
