@@ -3,7 +3,7 @@
     "mode": "default"
   },
   "npmci": {
-    "globalNpmTools": [
+    "npmGlobalTools": [
       "npmts"
     ]
   }
