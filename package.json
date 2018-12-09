@@ -1,5 +1,6 @@
 {
   "name": "@pushrocks/gulp-function",
+  "private": false,
   "version": "3.0.0",
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "dist/index.js",
@@ -37,6 +38,5 @@
     "gulp": "^3.9.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.17.0"
-  },
-  "private": true
+  }
 }
