@@ -1,5 +1,5 @@
 {
-  "name": "gulp-function",
+  "name": "@pushrocks/gulp-function",
   "version": "2.2.16",
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "dist/index.js",
