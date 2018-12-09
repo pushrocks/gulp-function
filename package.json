@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/gulp-function",
-  "version": "2.2.16",
+  "version": "3.0.0",
   "description": "accepts a function call as parameter to execute in gulp pipeline",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
