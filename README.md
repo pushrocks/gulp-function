@@ -35,8 +35,8 @@ let myAsyncFunction = async (file, enc) => {
 gulp.task("gulpTest", function() {
   let stream = gulp
     .src("./mydir/*.something")
-    .pipe(gulpFunction(myFunction, "forEach")) //read the notes below
-    // .pipe(forEach(myFunction)) // if imported as >> import { forEach } from 'gulp-function' <<
+    .pipe(gulpFunction(myAsyncFunction, "forEach")) //read the notes below
+    // .pipe(forEach(myAsyncFunction)) // if imported as >> import { forEach } from 'gulp-function' <<
     .pipe(gulp.dest("./build/"));
   return stream; // by returning the stream gulp knows when our task has finished.
 });
