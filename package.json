@@ -26,17 +26,28 @@
   },
   "homepage": "https://gitlab.com/pushrocks/gulp-function",
   "dependencies": {
-    "@pushrocks/smartpromise": "^2.0.5",
+    "@pushrocks/smartpromise": "^3.0.6",
     "@types/through2": "^2.0.32",
-    "through2": "^3.0.0"
+    "through2": "^3.0.1"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.3",
-    "@gitzone/tstest": "^1.0.18",
-    "@pushrocks/smartgulp": "^2.0.1",
-    "@pushrocks/tapbundle": "^3.0.7",
-    "gulp": "^3.9.1",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.17.0"
-  }
+    "@gitzone/tsbuild": "^2.1.17",
+    "@gitzone/tstest": "^1.0.28",
+    "@pushrocks/smartgulp": "^2.0.2",
+    "@pushrocks/tapbundle": "^3.2.0",
+    "gulp": "^4.0.2",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "files": [
+    "ts/**/*",
+    "ts_web/**/*",
+    "dist/**/*",
+    "dist_web/**/*",
+    "dist_ts_web/**/*",
+    "assets/**/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }

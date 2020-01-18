@@ -5,6 +5,15 @@
   "npmci": {
     "npmGlobalTools": [],
     "npmAccessLevel": "public"
-
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "pushrocks",
+      "gitrepo": "gulp-function",
+      "shortDescription": "accepts a function call as parameter to execute in gulp pipeline",
+      "npmPackagename": "@pushrocks/gulp-function",
+      "license": "MIT"
+    }
   }
 }
